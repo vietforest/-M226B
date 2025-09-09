@@ -1,0 +1,62 @@
+@startuml
+class main.twowheels.Moto {
+- String tipo
+- Motore motore
++ void faiRumore()
++ Motore getMotore()
++ void setMotore(Motore)
++ String getTipo()
++ void setTipo(String)
++ boolean equals(Object)
++ int hashCode()
++ String toString()
+}
+
+
+class main.fourwheels.Auto {
+- int numero_di_porte
++ void faiRumore()
++ int getNumero_di_porte()
++ void setNumero_di_porte(int)
++ boolean equals(Object)
++ int hashCode()
+}
+
+
+abstract class main.Veicolo {
+- String targa
+- String marca
+- String modello
+- int posti
++ String getTarga()
++ void setTarga(String)
++ String getMarca()
++ void setMarca(String)
++ String getModello()
++ void setModello(String)
++ int getPosti()
++ void setPosti(int)
++ {abstract}void faiRumore()
++ boolean equals(Object)
++ int hashCode()
+}
+
+
+class main.Main {
++ {static} void main(String[])
+}
+
+class main.fourwheels.Camion {
+- int capacita_massima_di_carico
++ int getCapacita_massima_di_carico()
++ void setCapacita_massima_di_carico(int)
++ void faiRumore()
+}
+
+
+
+
+main.Veicolo <|-- main.twowheels.Moto
+main.Veicolo <|-- main.fourwheels.Auto
+main.Veicolo <|-- main.fourwheels.Camion
+@enduml
