@@ -1,8 +1,10 @@
 package main.fourwheels;
 import main.Veicolo;
+import main.interfaces.Riparabile;
+
 import java.util.Objects;
 
-public class Auto extends Veicolo {
+public class Auto extends Veicolo implements Riparabile {
     @Override
     public void faiRumore() {
 
@@ -33,5 +35,10 @@ public class Auto extends Veicolo {
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), numero_di_porte);
+    }
+
+    @Override
+    public double calcolaCostoRiparazione(int oreLavoro) {
+        return (oreLavoro * 45.0) + 100;
     }
 }

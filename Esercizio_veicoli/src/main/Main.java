@@ -1,6 +1,10 @@
 package main;
 
+import main.fourwheels.Auto;
+import main.fourwheels.AutoElettrica;
 import main.fourwheels.Camion;
+import main.interfaces.Assicurabile;
+import main.interfaces.Riparabile;
 import main.twowheels.Moto;
 import mechanics.Motore;
 
@@ -31,5 +35,29 @@ public class Main {
         // Test equals method (case insensitive comparison by marca and modello)
         Moto altraMoto = new Moto("QW456ER", "ducati", "panigale v4", 2, "Sport");
         System.out.println("\nLe due moto sono uguali (stesso modello e marca)? " + moto.equals(altraMoto));
+        Auto miaAuto = new Auto("AB123CD", "Volvo", "FH16", 2, 4 );
+
+        Moto miaMoto = new Moto("XY729ZW", "Ducati", "Panigale V4", 1, "Sportiva");
+        System.out.print(miaAuto.calcolaCostoRiparazione(5));
+        System.out.println(miaMoto.getCostoAssicurazione());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        AutoElettrica autoElettrica = new AutoElettrica("AB123CD", "Volvo", "FH16", 2, 4, 50);
+        System.out.printf(String.valueOf(autoElettrica.getAutonomiaBatteria()+"\n"));
+        autoElettrica.ricarica();
     }
 }

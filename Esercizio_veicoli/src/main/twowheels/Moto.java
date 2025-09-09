@@ -2,11 +2,12 @@ package main.twowheels;
 
 import main.Main;
 import main.Veicolo;
+import main.interfaces.Assicurabile;
 import mechanics.Motore;
 
 import java.util.Objects;
 
-public final class Moto extends Veicolo {
+public final class Moto extends Veicolo implements Assicurabile {
     private String tipo;
     private Motore motore;
 
@@ -69,5 +70,10 @@ public final class Moto extends Veicolo {
                 ", tipo='" + tipo + '\'' +
                 ", motore=" + getMotore() +
                 '}';
+    }
+
+    @Override
+    public final double getCostoAssicurazione() {
+        return 250;
     }
 }
