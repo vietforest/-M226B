@@ -40,6 +40,8 @@ public class Main {
         Moto miaMoto = new Moto("XY729ZW", "Ducati", "Panigale V4", 1, "Sportiva");
         System.out.print(miaAuto.calcolaCostoRiparazione(5));
         System.out.println(miaMoto.getCostoAssicurazione());
+        Riparabile rip = miaAuto;
+
 
 
 

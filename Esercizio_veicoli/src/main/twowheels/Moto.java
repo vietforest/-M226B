@@ -72,6 +72,7 @@ public final class Moto extends Veicolo implements Assicurabile {
                 '}';
     }
 
+
     @Override
     public final double getCostoAssicurazione() {
         return 250;
