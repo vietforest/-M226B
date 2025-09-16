@@ -1,13 +1,13 @@
 package main.twowheels;
 
-import main.Main;
 import main.Veicolo;
 import main.interfaces.Assicurabile;
-import mechanics.Motore;
+import main.interfaces.Riparabile;
+import main.mechanics.Motore;
 
 import java.util.Objects;
 
-public final class Moto extends Veicolo implements Assicurabile {
+public final class Moto extends Veicolo implements Assicurabile, Riparabile {
     private String tipo;
     private Motore motore;
 
@@ -76,5 +76,10 @@ public final class Moto extends Veicolo implements Assicurabile {
     @Override
     public final double getCostoAssicurazione() {
         return 250;
+    }
+
+    @Override
+    public double calcolaCostoRiparazione(int oreLavoro) {
+        return 50*oreLavoro;
     }
 }

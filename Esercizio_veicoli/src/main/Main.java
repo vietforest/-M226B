@@ -3,10 +3,10 @@ package main;
 import main.fourwheels.Auto;
 import main.fourwheels.AutoElettrica;
 import main.fourwheels.Camion;
-import main.interfaces.Assicurabile;
-import main.interfaces.Riparabile;
+import main.service.AgenziaAssicurativa;
+import main.service.Officina;
 import main.twowheels.Moto;
-import mechanics.Motore;
+import main.mechanics.Motore;
 
 public class Main {
     public static void main(String[] args) {
@@ -40,8 +40,15 @@ public class Main {
         Moto miaMoto = new Moto("XY729ZW", "Ducati", "Panigale V4", 1, "Sportiva");
         System.out.print(miaAuto.calcolaCostoRiparazione(5));
         System.out.println(miaMoto.getCostoAssicurazione());
-        Riparabile rip = miaAuto;
 
+        Officina officina1 = new Officina();
+        officina1.accettaVeicolo(miaAuto);
+        officina1.accettaVeicolo(moto);
+        AgenziaAssicurativa ag1 = new AgenziaAssicurativa();
+        ag1.accettaVeicolo(miaMoto);
+        ag1.accettaVeicolo(moto);
+        officina1.stampaSchedarioRiparazioni();
+        ag1.calcolaIncassoTotale();
 
 
 

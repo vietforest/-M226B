@@ -1,4 +1,4 @@
-package mechanics;
+package main.mechanics;
 
 import java.util.Objects;
 
