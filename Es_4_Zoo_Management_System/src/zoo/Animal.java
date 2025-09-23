@@ -26,6 +26,4 @@ public abstract class Animal implements Feedable{
     }
     public abstract String makeSound();
 
-
-
 }

@@ -1,0 +1,132 @@
+@startuml
+class classes.AudioBook {
+- String narrator
+- double duration
+- String language
++ String getNarrator()
++ void setNarrator(String)
++ double getDuration()
++ void setDuration(double)
++ String getLanguage()
++ void setLanguage(String)
++ void getFormattedDuration()
++ String getContentType()
++ String getDescription()
++ double calculatePrice()
++ double applyDiscount(double)
++ double getPriceWithtTax()
+}
+
+
+enum Enum.Difficulty {
++  BEGINNER
++  INTERMEDIATE
++  ADVANCED
+}
+
+class classes.EBook {
+- Genre genre
+- int pageCount
+- boolean isIllustrated
++ double getReadingTime()
++ Genre getGenre()
++ void setGenre(Genre)
++ int getPageCount()
++ void setPageCount(int)
++ boolean isIllustrated()
++ void setIllustrated(boolean)
++ String getContentType()
++ String getDescription()
++ double calculatePrice()
++ double applyDiscount(double)
++ double getPriceWithtTax()
+}
+
+
+class Main {
++ {static} void main(String[])
+}
+
+class classes.OnlineCourse {
+- String instructor
+- Difficulty difficulty
+- int hours
++ int getHours()
++ void setHours(int)
++ Difficulty getDifficulty()
++ void setDifficulty(Difficulty)
++ String getInstructor()
++ void setInstructor(String)
++ void getCertificationEligible()
++ String getContentType()
++ String getDescription()
+}
+
+
+abstract class classes.DigitalContent {
+- int id
+- String name
+- double basePrice
+- double currentDiscount
++ int getId()
++ void setId(int)
++ String getName()
++ void setName(String)
++ double getBasePrice()
++ void setBasePrice(double)
++ double getCurrentDiscount()
++ void setCurrentDiscount(double)
++ {abstract}String getContentType()
++ {abstract}String getDescription()
++ double calculatePrice()
++ double applyDiscount(double)
++ double getPriceWithtTax()
+}
+
+
+enum Enum.Genre {
++  FICTION
++  NON_FICTION
++  BIOGRAPHY
++  SCIENCE
++  TECHNOLOGY
+}
+
+class classes.DigitalMagazine {
+- int issueNumber
+- LocalDate pubblicationDate
+- String category
++ int getIssueNumber()
++ void setIssueNumber(int)
++ LocalDate getPubblicationDate()
++ void setPubblicationDate(LocalDate)
++ String getCategory()
++ void setCategory(String)
++ Period isRecentIssue()
++ String getContentType()
++ String getDescription()
++ double calculatePrice()
+}
+
+
+interface Interfaces.Purchasable {
+~ double calculatePrice()
+~ double applyDiscount(double)
+~ {static} double getDefaultTaxRate()
+~ double getPriceWithtTax()
+}
+
+Enum.Genre <|-- classes.EBook
+Enum.Difficulty <|-- classes.OnlineCourse
+classes.DigitalContent <|-- classes.AudioBook
+classes.DigitalContent <|-- classes.EBook
+classes.DigitalContent <|-- classes.OnlineCourse
+Interfaces.Purchasable <|.. classes.DigitalContent
+classes.DigitalContent <|-- classes.DigitalMagazine
+Main <|-- classes.AudioBook
+Main <|-- classes.EBook
+Main <|-- classes.OnlineCourse
+Main <|-- classes.DigitalMagazine
+
+
+@enduml
