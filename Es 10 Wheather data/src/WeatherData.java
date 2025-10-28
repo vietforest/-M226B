@@ -58,7 +58,7 @@ public class WeatherData implements Comparable<WeatherData>{
 
     @Override
     public int compareTo(WeatherData o) {
-        return 0;
+        return o.getCity().compareTo(this.city);
     }
 
     @Override
