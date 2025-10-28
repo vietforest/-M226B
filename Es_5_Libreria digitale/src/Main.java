@@ -29,6 +29,7 @@ public class Main {
         for (Purchasable purchasable : purchasables) {
             System.out.println(purchasable.calculatePrice());
             System.out.println(purchasable.getPriceWithtTax());
+            System.out.println(purchasable.getClass().getName());
         }
 
 

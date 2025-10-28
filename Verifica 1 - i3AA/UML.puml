@@ -1,0 +1,70 @@
+@startuml
+abstract class ch.samt.talentshow.model.Participant {
+- String name
+- int age
+- Category category
+- Level level
+- int point
+- {static} double BEGINNER_LEVEL
+- {static} double INTERMEDIATE_LEVEL
+- {static} double PROFESSIONAL_LEVEL
+- {static} double CATEGORY_SINGER
+- {static} double CATEGORY_DANCER
+- {static} double CATEGORY_MAGICIAN
++ String getName()
++ void setName(String)
++ int getAge()
++ void setAge(int)
++ Category getCategory()
++ void setCategory(Category)
++ Level getLevel()
++ void setLevel(Level)
++ int getPoint()
++ void setPoint(int)
++ void point()
+}
+
+
+class ch.samt.talentshow.model.Dancer {
++ void show()
+}
+
+class ch.samt.talentshow.model.Singer {
++ void show()
+}
+
+interface ch.samt.talentshow.show.TheShow {
+~ void show()
+~ void point()
+}
+
+class ch.samt.talentshow.Main {
++ {static} void main(String[])
+}
+
+enum ch.samt.talentshow.enumerator.Category {
++  DANCER
++  SINGER
++  MAGICIAN
+}
+
+enum ch.samt.talentshow.enumerator.Level {
++  BEGINNER
++  INTERMEDIATE
++  PROFESSIONAL
+}
+
+class ch.samt.talentshow.model.Magician {
++ void show()
+}
+
+
+
+ch.samt.talentshow.show.TheShow <|.. ch.samt.talentshow.model.Participant
+ch.samt.talentshow.model.Participant <|-- ch.samt.talentshow.model.Dancer
+ch.samt.talentshow.model.Participant <|-- ch.samt.talentshow.model.Singer
+ch.samt.talentshow.model.Participant <|-- ch.samt.talentshow.model.Magician
+ch.samt.talentshow.model.Participant --o ch.samt.talentshow.Main : aggregation
+ch.samt.talentshow.enumerator.Category --> ch.samt.talentshow.model.Participant
+ch.samt.talentshow.enumerator.Level --> ch.samt.talentshow.model.Participant
+@enduml

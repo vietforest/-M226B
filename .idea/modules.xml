@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/-M226B.iml" filepath="$PROJECT_DIR$/.idea/-M226B.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Es_4_Zoo_Management_System/Es_4_Zoo_Management_System.iml" filepath="$PROJECT_DIR$/Es_4_Zoo_Management_System/Es_4_Zoo_Management_System.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Es_5_Libreria digitale/Es_5_Libreria digitale.iml" filepath="$PROJECT_DIR$/Es_5_Libreria digitale/Es_5_Libreria digitale.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Esercizio_veicoli/Esercizio_veicoli.iml" filepath="$PROJECT_DIR$/Esercizio_veicoli/Esercizio_veicoli.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Flotta_Aziendale/Flotta_Aziendale.iml" filepath="$PROJECT_DIR$/Flotta_Aziendale/Flotta_Aziendale.iml" />
+      <module fileurl="file://$PROJECT_DIR$/package/package.iml" filepath="$PROJECT_DIR$/package/package.iml" />
+    </modules>
+  </component>
+</project>
