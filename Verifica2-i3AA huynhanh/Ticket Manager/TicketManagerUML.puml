@@ -1,0 +1,93 @@
+@startuml
+class events.TicketConcert {
+- String sector
+- String mainArtist
++ String getMainArtist()
++ void setMainArtist(String)
++ String getSector()
++ void setSector(String)
++ double calculateTicketPrice()
++ String getEventType()
+}
+
+
+class Main {
++ {static} void main(String[])
+}
+
+abstract class events.Ticket {
+- String ticketCode
+- String eventName
+- String date
+- String place
+- int seatNumber
++ String getTicketCode()
++ void setTicketCode(String)
++ String getEventName()
++ void setEventName(String)
++ String getDate()
++ void setDate(String)
++ String getPlace()
++ void setPlace(String)
++ int getSeatNumber()
++ void setSeatNumber(int)
++ void sellTicket()
++ String isSold(boolean)
+}
+
+
+interface methods.Operation {
+~ double calculateTicketPrice()
+~ void sellTicket()
+~ String getEventType()
+~ String isSold(boolean)
+}
+
+class events.TicketManager {
+- List<Ticket> ticketsDisponible
+- List<Ticket> ticketsSold
++ void addTicket(Ticket)
++ void printTickets()
++ void sellTicket(String)
++ void outOfTickets(String)
++ void printTicketDisponible()
++ void revenueMoney()
++ void searcEventTicket(String)
++ void orderTicket()
++ void searchTicketByEventType(String)
++ void averagePrice()
+}
+
+
+class events.TicketTheather {
+- String showTitle
+- int row
+- boolean studentDiscount
++ String getShowTitle()
++ void setShowTitle(String)
++ int getRow()
++ void setRow(int)
++ boolean isStudentDiscount()
++ void setStudentDiscount(boolean)
++ double calculateTicketPrice()
++ String getEventType()
+}
+
+
+class events.TicketSport {
+- String sector
++ String getSector()
++ void setSector(String)
++ double calculateTicketPrice()
++ String getEventType()
+}
+
+
+events.TicketManager -->  Main
+events.Ticket --o events.TicketManager
+events.Ticket --o  Main
+events.Ticket <|-- events.TicketConcert
+methods.Operation <|.. events.Ticket
+events.Ticket <|-- events.TicketTheather
+events.Ticket <|-- events.TicketSport
+@enduml
