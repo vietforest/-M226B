@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ch.samt</groupId>
-    <artifactId>13UnitTestingCalculator</artifactId>
+    <artifactId>14UnitTestingAquaticSystem</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -26,6 +26,12 @@
             <groupId>org.mockito</groupId>
             <artifactId>mockito-junit-jupiter</artifactId>
             <version>${mockito.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
